@@ -21,7 +21,7 @@ export function UserForm() {
       // Store username in localStorage
       localStorage.setItem('surveyUser', userName)
       router.push('/general-info')
-    } catch (error) {
+    } catch {
       toast.error('Something went wrong. Please try again.')
     } finally {
       setIsLoading(false)

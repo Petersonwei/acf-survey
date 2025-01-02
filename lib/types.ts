@@ -9,6 +9,20 @@ export interface Question {
   options?: string[]
 }
 
+export interface StateOption {
+  state: State
+  description: string
+  example?: string
+  questions: Question[]
+}
+
+export interface Category {
+  id: string
+  title: string
+  description: string
+  stateOptions: StateOption[]
+}
+
 export interface SurveyAnswer {
   questionId: string
   answer: string

@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server'
 import { firestore } from '@/firebase/server'
-import { SurveyResponse } from '@/lib/types'
 
 export async function POST(request: Request) {
   try {

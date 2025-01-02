@@ -64,7 +64,7 @@ export function SurveyForm({ stateOption, categoryId }: SurveyFormProps) {
       } else {
         throw new Error('Failed to save response')
       }
-    } catch (error) {
+    } catch {
       toast.error('提交失敗，請稍後再試')
     } finally {
       setIsSubmitting(false)
