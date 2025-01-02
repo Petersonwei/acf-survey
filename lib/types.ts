@@ -1,22 +1,24 @@
 export type State = 'BNE' | 'PERTH' | 'TAS' | 'MEL' | 'ADE' | 'SYD'
 
-export type Category = {
-  id: string
-  title: string
-  description: string
-  stateOptions: StateOption[]
-}
+export type QuestionType = 'text' | 'radio' | 'select'
 
-export type StateOption = {
-  state: State
-  description: string
-  example: string
-  questions: Question[]
-}
-
-export type Question = {
+export interface Question {
   id: string
-  type: 'text' | 'select' | 'multiselect' | 'radio' | 'likert'
+  type: QuestionType
   title: string
   options?: string[]
+}
+
+export interface SurveyAnswer {
+  questionId: string
+  answer: string
+}
+
+export interface SurveyResponse {
+  id: string
+  userName: string
+  timestamp: Date
+  categoryId: string
+  state: State
+  answers: SurveyAnswer[]
 }
